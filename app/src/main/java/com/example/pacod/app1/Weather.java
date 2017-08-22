@@ -185,6 +185,75 @@ public class Weather extends AppCompatActivity {
                     String desc = jsonObjectWeather.getString("description");
                     String descCode = jsonObjectWeather.getString("id");
                     String main = jsonObjectWeather.getString("main");
+                    double tempDouble= Double.parseDouble(descCode);
+
+                    if(tempDouble>=200 && tempDouble<300)
+                    {
+                        try {
+                            InputStream stream = getAssets().open("thunder.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    } else if(tempDouble>=300 && tempDouble<500)
+                    {
+                        try {
+                            InputStream stream = getAssets().open("drizzle.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    }else if(tempDouble>=500 && tempDouble<600)
+                    {
+                        try {
+                            InputStream stream = getAssets().open("rainy.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    }else if(tempDouble>=600 && tempDouble<700)
+                    {
+                        try {
+                            InputStream stream = getAssets().open("snow.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    }else if(tempDouble==800 )
+                    {
+                        try {
+                            InputStream stream = getAssets().open("sunny.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    }else if(tempDouble>=801 && tempDouble<=899)
+                    {
+                        try {
+                            InputStream stream = getAssets().open("Cloudy.png");
+                            Drawable d =Drawable.createFromStream(stream,null);
+                            ivImagen.setImageDrawable(d);
+
+                        }catch (IOException ioe)
+                        {
+
+                        }
+                    }
 
                    //showParsedJSON.setText(output);
 
@@ -205,6 +274,9 @@ public class Weather extends AppCompatActivity {
 
                             break;
                     }
+
+
+
 
                     serverDataReceived.setText(temp);
                     mainweather.setText(main);
